@@ -8,7 +8,7 @@ public class EmployeeDatabase {
         try {
             String JDBC_URL = "jdbc:mysql://localhost:3306/database_employee?useSSL=false";
             String userName = "root";
-            String password = "Archana@123";
+            String password = "Pawar@1995";
             Connection connection;
             System.out.println("Connecting to database: " + JDBC_URL);
             connection = DriverManager.getConnection(JDBC_URL, userName, password);
