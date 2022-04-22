@@ -8,7 +8,7 @@ public class EmployeeDatabase {
         try {
             String JDBC_URL = "jdbc:mysql://localhost:3306/database_employee?useSSL=false";
             String userName = "root";
-            String password = "Pawar@1995";
+            String password = "Archana@123";
             Connection connection;
             System.out.println("Connecting to database: " + JDBC_URL);
             connection = DriverManager.getConnection(JDBC_URL, userName, password);
@@ -36,11 +36,24 @@ public class EmployeeDatabase {
         }
     }
 
+    // delete data
+    public  static  void delete() {
+        String sql="delete from employee where id=3";
+        Connection conn =getConnection();
+        try {
+            Statement st=conn.createStatement();
+            int count =st.executeUpdate(sql);
+            System.out.println( "Deleted "+count+" records!" );
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
 
     public static void main(String[] args) {
         System.out.println("welcome to employee-jdbc program");
         EmployeeDatabase jdbc = new EmployeeDatabase();
         jdbc.insert();
+        jdbc.delete();
     }
 }
-
